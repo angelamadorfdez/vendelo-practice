@@ -1,0 +1,8 @@
+<div>
+  <%= link_to t('.new'), new_category_path %>
+</div>
+<br>
+<h2><%= t('.all_categories') %></h2>
+<div>
+  <%= render partial:'category', collection: @categories %>
+</div>

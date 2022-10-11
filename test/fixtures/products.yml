@@ -4,8 +4,16 @@ ps4:
   title: PS4 Fat
   description: PS4 en buen estado
   price: 150
+  category: consolas
 
 switch:
   title: Nintendo Switch
   description: Le falla el lector de tarjeta SD
-  price: 195
+  price: 190
+  category: informatica
+
+macbook:
+  title: Macbook Air
+  description: Modelo 2015 (i5, 256 GB). Funciona perfectamente
+  price: 495
+  category: consolas

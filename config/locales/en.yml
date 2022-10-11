@@ -2,12 +2,16 @@ en:
   activerecord:
     models:
       product: Product
+      category: Category
     attributes:
       product:
         title: 'Title'
         description: 'Description'
         price: 'Price'
         photo: 'Photo'
+      category:
+        name: 'Name'
+        slug: 'slug'
     errors:
       models:
         product:
@@ -18,11 +22,20 @@ en:
               blank: "can't be blank"
             price:
               blank: "can't be blank"
+        category:
+          attributes:
+            name:
+              blank: "can't be blank"
+              taken: 'is taken'
+            slug:
+              blank: "can't be blank"
+              taken: 'is taken'
   common:
     confirm: 'Are you sure?'
   shared:
     header:
       add: 'Add product'
+      categories: "All categories"
   products:
     edit:
       title: 'Edit product'
@@ -39,3 +52,11 @@ en:
       updated: 'Your product has been successfully updated'
     destroy:
       destroyed: 'Your product has been successfully destroyed'
+  categories:
+    index:
+      new: 'Create new category'
+      all_categories: 'All categories'
+    new:
+      title: 'New category'
+    create:
+      created: 'Your category has been successfully created'

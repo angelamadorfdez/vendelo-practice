@@ -1,0 +1,15 @@
+<%= form_with model: @category do |form| %>
+
+  <% @category.errors.full_messages.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :slug %>
+  <%= form.text_field :slug %>
+
+  <%= form.submit %>
+
+<% end %>
