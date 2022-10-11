@@ -1,1 +1,8 @@
 <h2><%= @category.name %></h2>
+
+<%= link_to t('.edit'), edit_category_path(@category) %>
+
+<%= link_to t('.delete'), category_path(@category), data: {
+  turbo_method: :delete,
+  turbo_confirm: t('common.confirm')
+} %>

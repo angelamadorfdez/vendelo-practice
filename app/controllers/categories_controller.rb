@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to products_path, notice: t('.created')
+      redirect_to categories_path, notice: t('.created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,14 +38,12 @@ class CategoriesController < ApplicationController
 
   end
 
-
-
-
-
-
   def destroy
-  end
+    @category = Category.find_by(slug: params[:slug])
 
+    @category.destroy
+    redirect_to categories_path, notice: t('.destroyed'), status: :see_other
+  end
 
   private
 

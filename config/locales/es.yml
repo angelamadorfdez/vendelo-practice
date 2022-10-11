@@ -38,14 +38,14 @@ es:
       categories: 'Todas las categorías'
   products:
     edit:
-      title: 'Editar producto'
+      title: 'Editar'
     new:
-      title: 'Añadir producto'
+      title: 'Añadir'
     index:
       title: 'Productos:'
     show:
-      edit: 'Editar producto'
-      delete: 'Borrar producto'
+      edit: 'Editar'
+      delete: 'Borrar'
     create:
       created: 'Tu producto se ha creado correctamente'
     update:
@@ -58,5 +58,12 @@ es:
       all_categories: 'Todas las categorías'
     new:
       title: 'Nueva categoría'
+    show:
+      edit: 'Editar'
+      delete: 'Borrar'
     create:
       created: 'Tu categoría se ha creado correctamente'
+    update:
+      updated: 'La categoría se ha actualizado correctamente'
+    destroy:
+      destroyed: 'La categoría se ha borrado correctamente'
