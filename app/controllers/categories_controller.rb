@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by(slug: params[:slug])
 
     if @category.update(category_params)
-      redirect_to product_path(@category.slug), notice: t('.updated')
+      redirect_to categories_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
     end
