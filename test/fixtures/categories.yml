@@ -7,3 +7,7 @@ consolas:
 informatica:
   name: Informática
   slug: informatica
+
+ropa:
+  name: Ropa
+  slug: ropa

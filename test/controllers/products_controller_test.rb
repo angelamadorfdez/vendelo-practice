@@ -5,7 +5,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path
 
     assert_response :success
-    assert_select '.product', 2
+    assert_select '.product', 3
   end
 
   test 'render a detailed product page' do
@@ -25,14 +25,17 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'allows to create a new product' do
-    post products_path, params: {
+    assert_difference('Product.count', 1) do
+      post products_path, params: {
       product: {
         title: 'Nintendo 64',
         description: 'Le faltan los cables',
-        price: 45
+        price: 45,
+        category_id: categories(:consolas).id
       }
     }
-
+    end
+    
     assert_redirected_to products_path
     assert_equal flash[:notice], 'Tu producto se ha creado correctamente'
   end
@@ -42,7 +45,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       product: {
         title: '',
         description: 'Le faltan los cables',
-        price: 45
+        price: 45,
+        category_id: nil
       }
     }
 
