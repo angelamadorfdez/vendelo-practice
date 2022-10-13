@@ -35,6 +35,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h2', 'Nintendo Switch'
   end
 
+  test 'render a list of products ordered by cheapest' do
+    get products_path(order_by: "expensive")
+
+    assert_response :success
+    assert_select '.product', 3
+    assert_select '.products .product:first-child h2', "Macbook Air"
+  end
+
   test 'render a detailed product page' do
     get product_path(products(:ps4))
 
