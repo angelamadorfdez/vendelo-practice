@@ -11,6 +11,7 @@ switch:
   description: Le falla el lector de tarjeta SD
   price: 190
   category: consolas
+  
 macbook:
   title: Macbook Air
   description: Modelo 2015 (i5, 256 GB). Funciona perfectamente

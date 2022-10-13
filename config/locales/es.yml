@@ -43,6 +43,7 @@ es:
       title: 'Añadir'
     index:
       title: 'Productos:'
+      all_products: 'Todos'
     show:
       edit: 'Editar'
       delete: 'Borrar'

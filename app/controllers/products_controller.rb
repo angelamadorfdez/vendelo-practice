@@ -1,6 +1,13 @@
 class ProductsController < ApplicationController
+  
   def index
-    @products = Product.all.with_attached_photo
+    @categories = Category.all.order(name: :asc).load_async
+    @products = Product.all.with_attached_photo.load_async
+
+    if params[:category]
+      @products = @products.where(category_id: Category.where(slug: params[:category]))
+    end
+
   end
 
   def show
