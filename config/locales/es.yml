@@ -44,6 +44,8 @@ es:
     index:
       title: 'Productos:'
       all_products: 'Todos'
+      min_price: 'Precio Mínimo'
+      max_price: 'Precio Máximo'
     show:
       edit: 'Editar'
       delete: 'Borrar'
