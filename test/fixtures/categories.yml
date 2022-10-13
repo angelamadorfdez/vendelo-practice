@@ -1,13 +1,41 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-consolas:
-  name: Consolas
-  slug: consolas
+videogames:
+  name: Videojuegos
+  slug: videojuegos
 
-informatica:
+computers:
   name: Informática
   slug: informatica
 
-ropa:
+clothes:
   name: Ropa
   slug: ropa
+
+cars:
+  name: Coches
+  slug: coches
+
+music:
+  name: Música
+  slug: musica
+
+electronic:
+  name: Electrónica
+  slug: electronica
+
+books:
+  name: Libros
+  slug: libros
+
+mobile:
+  name: Móviles
+  slug: moviles
+
+sports:
+  name: Deportes
+  slug: deportes
+
+beauty:
+  name: Beauty
+  slug: beauty

@@ -5,24 +5,24 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path
 
     assert_response :success
-    assert_select '.product', 3
-    assert_select '.category', 3
+    assert_select '.product', 12
+    assert_select '.category', 10
   end
 
   test 'render a list of products filtered by category' do
-    get products_path(category: categories(:consolas).slug)
+    get products_path(category: categories(:videogames).slug)
 
     assert_response :success
-    assert_select '.product', 2
-    assert_select '.category', 3
+    assert_select '.product', 7
+    assert_select '.category', 10
   end
 
   test 'render a list of products filtered by min_price and max_price' do
     get products_path(min_price: 160, max_price: 200)
 
     assert_response :success
-    assert_select '.product', 1
-    assert_select '.category', 3
+    assert_select '.product', 3
+    assert_select '.category', 10
     assert_select 'h2', 'Nintendo Switch'
   end
 
@@ -31,7 +31,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select '.product', 1
-    assert_select '.category', 3
+    assert_select '.category', 10
     assert_select 'h2', 'Nintendo Switch'
   end
 
@@ -39,8 +39,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(order_by: "expensive")
 
     assert_response :success
-    assert_select '.product', 3
-    assert_select '.products .product:first-child h2', "Macbook Air"
+    assert_select '.product', 12
+    assert_select '.products .product:first-child h2', "Seat Panda clásico"
   end
 
   test 'render a detailed product page' do
@@ -66,7 +66,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         title: 'Nintendo 64',
         description: 'Le faltan los cables',
         price: 45,
-        category_id: categories(:consolas).id
+        category_id: categories(:videogames).id
       }
     }
     end

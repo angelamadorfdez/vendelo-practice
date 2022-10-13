@@ -6,14 +6,14 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     get categories_path
 
     assert_response :success
-    assert_select '.category', 3
+    assert_select '.category', 10
   end
 
   test 'show category' do
-    get category_path(categories(:consolas))
+    get category_path(categories(:videogames))
 
     assert_response :success
-    assert_select 'h2', 'Consolas'
+    assert_select 'h2', 'Videojuegos'
   end
 
   test 'show new category form' do
@@ -50,9 +50,9 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'allow update a product' do
-    patch category_path(categories(:consolas)), params: {
+    patch category_path(categories(:videogames)), params: {
       category: {
-        name: 'Videoconsolas'
+        name: 'Juegos'
       }
     }
 
@@ -60,7 +60,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'dont allow update a categoru with an invalid field' do
-    patch category_path(categories(:consolas)), params: {
+    patch category_path(categories(:videogames)), params: {
       category: {
         name: nil
       }
@@ -71,7 +71,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test 'allow to delete a category with no products' do
     assert_difference('Category.count', -1) do
-      delete category_path(categories(:ropa))
+      delete category_path(categories(:beauty))
     end
 
     assert_redirected_to categories_path
