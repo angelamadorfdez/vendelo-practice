@@ -46,6 +46,7 @@ en:
       all_products: 'All'
       min_price: 'Min Price'
       max_price: 'Max Price'
+      query: 'Search'
     show:
       edit: 'Edit'
       delete: 'Delete'

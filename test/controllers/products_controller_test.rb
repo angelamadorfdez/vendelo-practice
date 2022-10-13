@@ -26,6 +26,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h2', 'Nintendo Switch'
   end
 
+  test 'render a list of products filtered by query' do
+    get products_path(query: "switch")
+
+    assert_response :success
+    assert_select '.product', 1
+    assert_select '.category', 3
+    assert_select 'h2', 'Nintendo Switch'
+  end
+
   test 'render a detailed product page' do
     get product_path(products(:ps4))
 
